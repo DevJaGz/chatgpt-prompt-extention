@@ -1,0 +1,32 @@
+{
+  "name": "Chat GPT Templates",
+  "version": "0.1.0",
+  "description": "Saving and loading chat templates",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://chat.openai.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["https://chat.openai.com/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/imgs/extension-icon-16.png",
+      "24": "assets/imgs/extension-icon-24.png",
+      "32": "assets/imgs/extension-icon-32.png"
+    },
+    "default_title": "Chat GPT Templates",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
