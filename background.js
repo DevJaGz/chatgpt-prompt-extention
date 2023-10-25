@@ -1,5 +1,6 @@
  /// <reference path="chrome.intellisense.js" />
 
+
 function getChatId(tabId, tab) {
   // Get the URL of the tab
   const URL = tab.url;
@@ -12,12 +13,13 @@ function getChatId(tabId, tab) {
     // The ID is in match[1]
     const chatId = match ? match[1] : null;
 
-
+    // Message to send to the tab
     const message = {
-      type: "NEW",
+      type: "NEW_CHAT_ID",
       chatId,
     }
 
+    // Send the message to the tab
     notifyTabMessage(tabId, message);
   }
 }
