@@ -13,6 +13,9 @@ function getChatId(tabId, tab) {
     // The ID is in match[1]
     const chatId = match ? match[1] : null;
 
+    // If there is no ID, return
+    if (!chatId) return;
+
     // Message to send to the tab
     const message = {
       type: "NEW_CHAT_ID",
