@@ -1,4 +1,6 @@
-async function getChatId(tabId, tab) {
+ /// <reference path="chrome.intellisense.js" />
+
+function getChatId(tabId, tab) {
   // Get the URL of the tab
   const URL = tab.url;
   // Check if the URL is a GTP Chat
@@ -16,13 +18,13 @@ async function getChatId(tabId, tab) {
       chatId,
     }
 
-    await notifyTabMessage(tabId, message);
+    notifyTabMessage(tabId, message);
   }
 }
 
-async function notifyTabMessage(tabId, message){
+function notifyTabMessage(tabId, message){
   console.log("[BACKGROUND] message", message);
-  await chrome.tabs.sendMessage(tabId, message);
+  chrome.tabs.sendMessage(tabId, message);
 }
 
 chrome.tabs.onUpdated.addListener(getChatId);
