@@ -2,7 +2,7 @@
 
 let currentChatId = "";
 
-function newChatIdHandler() {
+function newChatHandler() {
   if (!currentChatId) {
     throw new Error("No chat ID");
   }
@@ -13,9 +13,9 @@ function getMessages(message, sender, sendResponse) {
   const { type, chatId } = message;
   console.log("[CONTENT SCRIPT] message", message);
 
-  if (type === "NEW_CHAT_ID") {
+  if (type === "CHAT_SELECTED") {
     currentChatId = chatId;
-    newChatIdHandler();
+    newChatHandler();
   }
 }
 

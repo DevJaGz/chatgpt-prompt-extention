@@ -1,5 +1,4 @@
- /// <reference path="chrome.intellisense.js" />
-
+/// <reference path="chrome.intellisense.js" />
 
 function getChatId(tabId, tab) {
   // Get the URL of the tab
@@ -18,16 +17,16 @@ function getChatId(tabId, tab) {
 
     // Message to send to the tab
     const message = {
-      type: "NEW_CHAT_ID",
+      type: "CHAT_SELECTED",
       chatId,
-    }
+    };
 
     // Send the message to the tab
     notifyTabMessage(tabId, message);
   }
 }
 
-function notifyTabMessage(tabId, message){
+function notifyTabMessage(tabId, message) {
   console.log("[BACKGROUND] message", message);
   chrome.tabs.sendMessage(tabId, message);
 }
