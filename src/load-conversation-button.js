@@ -14,6 +14,12 @@ const userPromptMatcher = {
 const CONVERSATION_BUTTON_LABEL = "Save Prompt";
 const CONVERSATION_BUTTON_CSS_CLASS = "gptp-default-btn";
 
+const link = document.createElement("link");
+link.href = chrome.runtime.getURL("src/assets/styles/global.css");
+link.type = "text/css";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
 const conversationFilter = ($conversation) => {
   const value = $conversation.getAttribute(
     `data-${conversatsMatcher.dataAttr}`

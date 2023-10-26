@@ -1,0 +1,28 @@
+:root{
+  --gptp-primary-color-50: #ececf1;
+  --gptp-primary-color-100: #d9d9e3;
+  --gptp-primary-color-200: #d1d5db;
+  --gptp-primary-color-300: #c5c5d2;
+  --gptp-primary-color-400: #acacbe;
+  --gptp-primary-color-500: #8e8ea0;
+  --gptp-primary-color-550: #565869;
+  --gptp-primary-color-600: #444654;
+  --gptp-primary-color-700: #40414f;
+  --gptp-primary-color-800: #343541;
+  --gptp-primary-color-900: #202123;
+  --gptp-green-color-500: #19c37d;
+}
+
+.gptp-default-btn {
+  padding: 0.5rem 0.75rem;
+  margin: 1rem;
+  color: var(--gptp-primary-color-100);
+  background-color: var(--gptp-primary-color-800);
+  border: 1px solid var(--gptp-primary-color-550);
+  border-radius: 0.25rem;
+  float: right;
+}
+
+.gptp-default-btn:hover {
+  background-color: var(--gptp-primary-color-700);
+}

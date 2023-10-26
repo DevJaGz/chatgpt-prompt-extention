@@ -16,7 +16,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": [],
+      "resources": ["src/assets/styles/global.css"],
       "matches": ["https://chat.openai.com/*"]
     }
   ],
