@@ -1,0 +1,13 @@
+.template-btn {
+  padding: 0.5rem 0.75rem;
+  margin: 1rem;
+  color: #D9D9E3;
+  background-color: #343541;
+  border: 1px solid #565869;
+  border-radius: 0.25rem;
+  float: right;
+}
+
+.template-btn:hover {
+  background-color: #40414f;
+}

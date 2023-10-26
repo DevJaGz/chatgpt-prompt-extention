@@ -53,22 +53,7 @@ const getConversations$ = (timeout = 10_000) => {
 const createButton = (label, { clickHandler = () => {} } = {}) => {
   const $button = document.createElement("button");
   $button.textContent = label;
-  $button.style.float = "right";
-  $button.style.padding = "0.5rem 0.75rem";
-  $button.style.borderRadius = "0.25rem";
-  $button.style.background = "#19C37D";
-  $button.style.color = "#343541";
-  $button.style.margin = "1rem";
-  $button.style.transition = "background 0.2s ease-in-out";
-  $button.style.fontWeight = "500";
-  $button.addEventListener("click", clickHandler);
-  $button.addEventListener("mouseenter", () => {
-    $button.style.background = "#0E995D";
-  });
-  $button.addEventListener("mouseleave", () => {
-    $button.style.background = "#19C37D";
-  });
-
+  $button.classList.add("template-btn");
   return $button;
 };
 
