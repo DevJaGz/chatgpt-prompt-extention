@@ -3,7 +3,7 @@
 let currentChatId = "";
 const CONVERSATION_DATA_ATTR = "testid";
 const CONVERSATION_MATCH_LABEL = "conversation-turn";
-const CONVERSATION_BUTTON_LABEL = "Add as template";
+const CONVERSATION_BUTTON_LABEL = "Save as template";
 
 const conversationFilter = ($conversation) => {
   const value = $conversation.getAttribute(`data-${CONVERSATION_DATA_ATTR}`);
