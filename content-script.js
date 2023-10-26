@@ -3,6 +3,7 @@
 let currentChatId = "";
 const CONVERSATION_DATA_ATTR = "testid";
 const CONVERSATION_MATCH_LABEL = "conversation-turn";
+const CONVERSATION_BUTTON_LABEL = "Add as template";
 
 const conversationFilter = ($conversation) => {
   const value = $conversation.getAttribute(`data-${CONVERSATION_DATA_ATTR}`);
@@ -49,24 +50,33 @@ const getConversations$ = (timeout = 10_000) => {
   });
 };
 
-const createButtonClickHandler = () => {};
-
-const createButton = (label, clickHandler = () => {}) => {
+const createButton = (label, { clickHandler = () => {} } = {}) => {
   const $button = document.createElement("button");
-  $button.innerText = label;
-  $button.addEventListener("click", clickHandler);
+  $button.textContent = label;
   $button.style.float = "right";
-  $button.style.padding = "0.5rem";
+  $button.style.padding = "0.5rem 0.75rem";
   $button.style.borderRadius = "0.25rem";
   $button.style.background = "#19C37D";
+  $button.style.color = "#343541";
   $button.style.margin = "1rem";
+  $button.style.transition = "background 0.2s ease-in-out";
+  $button.style.fontWeight = "500";
+  $button.addEventListener("click", clickHandler);
+  $button.addEventListener("mouseenter", () => {
+    $button.style.background = "#0E995D";
+  });
+  $button.addEventListener("mouseleave", () => {
+    $button.style.background = "#19C37D";
+  });
+
   return $button;
 };
 
 const drawButton = ($conversation) => {
-  const $button = createButton("Add template", () => {
-    console.log("click");
-  });
+  const clickHandler = () => {
+    console.log(`click ${JSON.stringify($conversation.innerText, null, 2)}`);
+  };
+  const $button = createButton(CONVERSATION_BUTTON_LABEL, { clickHandler });
   $conversation.appendChild($button);
 };
 
@@ -79,7 +89,9 @@ const newChatHandler = async () => {
     console.error("Could not find conversations");
     return;
   }
-  conversations.forEach(drawButton);
+  for (const conversation$ of conversations) {
+    drawButton(conversation$);
+  }
   console.log("[CONTENT SCRIPT] newChatIdHandler", conversations?.length);
 };
 
