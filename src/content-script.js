@@ -1,4 +1,4 @@
-/// <reference path="chrome.intellisense.js" />
+/// <reference path="./chrome.intellisense.js" />
 
 let currentChatId = "";
 const CONVERSATION_DATA_ATTR = "testid";

@@ -1,4 +1,4 @@
-/// <reference path="chrome.intellisense.js" />
+/// <reference path="./chrome.intellisense.js" />
 
 function notifyTabMessage(tabId, message) {
   console.log("[BACKGROUND] message", message);
