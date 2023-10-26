@@ -11,7 +11,7 @@
     {
       "matches": ["https://chat.openai.com/*"],
       "js": ["src/load-conversation-button.js"],
-      "css": ["src/assets/styles/main.css"]
+      "css": ["src/assets/styles/content-scripts.css"]
     }
   ],
   "web_accessible_resources": [

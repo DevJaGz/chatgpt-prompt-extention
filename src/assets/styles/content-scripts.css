@@ -1,4 +1,4 @@
-.cgpp-default-btn {
+.gptp-default-btn {
   padding: 0.5rem 0.75rem;
   margin: 1rem;
   color: #D9D9E3;
@@ -8,6 +8,6 @@
   float: right;
 }
 
-.cgpp-default-btn:hover {
+.gptp-default-btn:hover {
   background-color: #40414f;
 }

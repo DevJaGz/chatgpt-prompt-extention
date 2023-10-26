@@ -12,7 +12,7 @@ const userPromptMatcher = {
 };
 
 const CONVERSATION_BUTTON_LABEL = "Save Prompt";
-const CONVERSATION_BUTTON_CSS_CLASS = "cgpp-default-btn";
+const CONVERSATION_BUTTON_CSS_CLASS = "gptp-default-btn";
 
 const conversationFilter = ($conversation) => {
   const value = $conversation.getAttribute(
