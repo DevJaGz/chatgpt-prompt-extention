@@ -31,16 +31,16 @@ function getChatIdFromURL(tabId, tab) {
   }
 }
 
-function listenTabChanges(tabId, tab) {
+function tabChangesListener(tabId, tab) {
   getChatIdFromURL(tabId, tab);
 }
 
-function listenNavigationCompleteChanges({ tabId, url }) {
+function navigationCompleteChangesListener({ tabId, url }) {
   if (!url || url === "about:blank") return;
   const tab = { url };
-  listenTabChanges(tabId, tab);
+  getChatIdFromURL(tabId, tab);
   console.log("[BACKGROUND] webNavigation", url);
 }
 
-chrome.tabs.onUpdated.addListener(listenTabChanges);
-chrome.webNavigation.onCompleted.addListener(listenNavigationCompleteChanges);
+chrome.tabs.onUpdated.addListener(tabChangesListener);
+chrome.webNavigation.onCompleted.addListener(navigationCompleteChangesListener);
