@@ -1,30 +1,44 @@
 /// <reference path="./chrome.intellisense.js" />
 
 let currentChatId = "";
-const CONVERSATION_DATA_ATTR = "testid";
-const CONVERSATION_MATCH_LABEL = "conversation-turn";
+
+const conversatsMatcher = {
+  dataAttr: "testid",
+  dataValue: "conversation-turn",
+};
+
+const userPromptMatcher = {
+  attr: '[class=""]',
+};
+
 const CONVERSATION_BUTTON_LABEL = "Save as template";
 
 const conversationFilter = ($conversation) => {
-  const value = $conversation.getAttribute(`data-${CONVERSATION_DATA_ATTR}`);
-  return value?.includes(CONVERSATION_MATCH_LABEL);
+  const value = $conversation.getAttribute(
+    `data-${conversatsMatcher.dataAttr}`
+  );
+  return value?.includes(conversatsMatcher.dataValue);
 };
 
 const isConversationEven = (dataTestidValue) => {
-  const regex = new RegExp(CONVERSATION_MATCH_LABEL + "-(\\d+)");
+  const regex = new RegExp(conversatsMatcher.dataValue + "-(\\d+)");
   const match = regex.exec(dataTestidValue);
   const number = Number(match ? match[1] : 0);
   return number % 2 === 0;
 };
 
 const myConversationFilter = ($conversation) => {
-  const value = $conversation.getAttribute(`data-${CONVERSATION_DATA_ATTR}`);
-  return value?.includes(CONVERSATION_MATCH_LABEL) && isConversationEven(value);
+  const value = $conversation.getAttribute(
+    `data-${conversatsMatcher.dataAttr}`
+  );
+  return (
+    value?.includes(conversatsMatcher.dataValue) && isConversationEven(value)
+  );
 };
 
 const getConversations = () => {
   const queryElements = document.querySelectorAll(
-    `[data-${CONVERSATION_DATA_ATTR}]`
+    `[data-${conversatsMatcher.dataAttr}]`
   );
   if (!queryElements?.length) {
     return [];
@@ -60,9 +74,18 @@ const createButton = (label, { clickHandler } = {}) => {
   return $button;
 };
 
+const extractUserPrompt = ($conversation) => {
+  return $conversation.querySelector(userPromptMatcher.attr)?.textContent;
+};
+
 const drawButton = ($conversation) => {
   const clickHandler = () => {
-    console.log(`click ${JSON.stringify($conversation.innerText, null, 2)}`);
+    const userPromt = extractUserPrompt($conversation);
+    if (!userPromt) {
+      console.error("Could not find user prompt");
+      return;
+    }
+    console.log(`click: ${JSON.stringify(userPromt, null, 2)}`);
   };
   const $button = createButton(CONVERSATION_BUTTON_LABEL, { clickHandler });
   $conversation.appendChild($button);
