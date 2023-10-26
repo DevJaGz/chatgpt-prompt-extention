@@ -7,7 +7,7 @@ function notifyTabMessage(tabId, message) {
 
 function getChatIdFromURL(tabId, tab) {
   // Get the URL of the tab
-  const URL = tab.url;
+  const URL = tab?.url;
   // Check if the URL is a GTP Chat
   if (URL?.includes("chat.openai.com")) {
     // Regular expression to match the ID after "/c/"
@@ -35,4 +35,5 @@ function listenTabChanges(tabId, tab) {
   getChatIdFromURL(tabId, tab);
 }
 
+chrome.tabs.onActivated.addListener(listenTabChanges);
 chrome.tabs.onUpdated.addListener(listenTabChanges);
