@@ -1,5 +1,5 @@
 {
-  "name": "ChatGPT Prompt",
+  "name": "ChatGPT Prompts",
   "version": "0.1.0",
   "description": "Save your best prompts and load them at the right moment, making your conversations smarter and more engaging.",
   "permissions": ["storage", "tabs"],
@@ -26,7 +26,7 @@
       "24": "assets/imgs/extension-icon-24.png",
       "32": "assets/imgs/extension-icon-32.png"
     },
-    "default_title": "ChatGPT Prompt",
+    "default_title": "ChatGPT Prompts",
     "default_popup": "src/popup.html"
   },
   "manifest_version": 3
