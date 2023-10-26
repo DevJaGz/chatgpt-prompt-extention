@@ -11,7 +11,7 @@ const userPromptMatcher = {
   attr: '[class=""]',
 };
 
-const CONVERSATION_BUTTON_LABEL = "Save as template";
+const CONVERSATION_BUTTON_LABEL = "Save Prompt";
 
 const conversationFilter = ($conversation) => {
   const value = $conversation.getAttribute(
