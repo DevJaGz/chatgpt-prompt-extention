@@ -1,7 +1,7 @@
 {
-  "name": "Chat GPT Templates",
+  "name": "ChatGPT Prompt",
   "version": "0.1.0",
-  "description": "Saving and loading chat templates",
+  "description": "Save your best prompts and load them at the right moment, making your conversations smarter and more engaging.",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["https://chat.openai.com/*"],
   "background": {
@@ -26,7 +26,7 @@
       "24": "assets/imgs/extension-icon-24.png",
       "32": "assets/imgs/extension-icon-32.png"
     },
-    "default_title": "Chat GPT Templates",
+    "default_title": "ChatGPT Prompt",
     "default_popup": "src/popup.html"
   },
   "manifest_version": 3

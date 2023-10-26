@@ -85,7 +85,9 @@ const drawButton = ($conversation) => {
       console.error("Could not find user prompt");
       return;
     }
-    console.log(`click: ${JSON.stringify(userPromt, null, 2)}`);
+    console.log(
+      `click: ${JSON.stringify(userPromt, null, 2)}, Chat Id: ${currentChatId}`
+    );
   };
   const $button = createButton(CONVERSATION_BUTTON_LABEL, { clickHandler });
   $conversation.appendChild($button);
