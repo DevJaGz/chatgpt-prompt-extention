@@ -110,7 +110,7 @@ const newChatHandler = async () => {
 
 function messageListener(message, sender, sendResponse) {
   const { type, chatId } = message;
-  if (type === "CHAT_SELECTED") {
+  if (type === "NEW_CHAT_ID") {
     currentChatId = chatId;
     newChatHandler();
   }

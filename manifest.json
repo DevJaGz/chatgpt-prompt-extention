@@ -11,7 +11,7 @@
     {
       "matches": ["https://chat.openai.com/*"],
       "js": ["src/content-script.js"],
-      "css": ["assets/styles/content-script.css"]
+      "css": ["src/assets/styles/content-script.css"]
     }
   ],
   "web_accessible_resources": [
@@ -22,9 +22,9 @@
   ],
   "action": {
     "default_icon": {
-      "16": "assets/imgs/extension-icon-16.png",
-      "24": "assets/imgs/extension-icon-24.png",
-      "32": "assets/imgs/extension-icon-32.png"
+      "16": "src/assets/imgs/extension-icon-16.png",
+      "24": "src/assets/imgs/extension-icon-24.png",
+      "32": "src/assets/imgs/extension-icon-32.png"
     },
     "default_title": "ChatGPT Prompts",
     "default_popup": "src/popup.html"
