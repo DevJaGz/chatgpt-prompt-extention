@@ -50,10 +50,13 @@ const getConversations$ = (timeout = 10_000) => {
   });
 };
 
-const createButton = (label, { clickHandler = () => {} } = {}) => {
+const createButton = (label, { clickHandler } = {}) => {
   const $button = document.createElement("button");
   $button.textContent = label;
   $button.classList.add("template-btn");
+  if (clickHandler) {
+    $button.addEventListener("click", clickHandler);
+  }
   return $button;
 };
 
