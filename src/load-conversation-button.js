@@ -12,6 +12,7 @@ const userPromptMatcher = {
 };
 
 const CONVERSATION_BUTTON_LABEL = "Save Prompt";
+const CONVERSATION_BUTTON_CSS_CLASS = "cgpp-default-btn";
 
 const conversationFilter = ($conversation) => {
   const value = $conversation.getAttribute(
@@ -67,7 +68,7 @@ const getConversations$ = (timeout = 10_000) => {
 const createButton = (label, { clickHandler } = {}) => {
   const $button = document.createElement("button");
   $button.textContent = label;
-  $button.classList.add("template-btn");
+  $button.classList.add(CONVERSATION_BUTTON_CSS_CLASS);
   if (clickHandler) {
     $button.addEventListener("click", clickHandler);
   }
@@ -78,7 +79,16 @@ const extractUserPrompt = ($conversation) => {
   return $conversation.querySelector(userPromptMatcher.attr)?.textContent;
 };
 
-const drawButton = ($conversation) => {
+const hasConversationButton = ($conversation) => {
+  return Boolean(
+    $conversation.querySelector(`.${CONVERSATION_BUTTON_CSS_CLASS}`)
+  );
+};
+
+const drawConversationButtons = ($conversation) => {
+  if (hasConversationButton($conversation)) {
+    return;
+  }
   const clickHandler = () => {
     const userPromt = extractUserPrompt($conversation);
     if (!userPromt) {
@@ -103,14 +113,13 @@ const newChatHandler = async () => {
     return;
   }
   for (const conversation$ of conversations) {
-    drawButton(conversation$);
+    drawConversationButtons(conversation$);
   }
-  console.log("[CONTENT SCRIPT] newChatIdHandler", conversations?.length);
 };
 
 function messageListener(message, sender, sendResponse) {
   const { type, chatId } = message;
-  if (type === "NEW_CHAT_ID") {
+  if (type === "NEW_CHAT_DETECTED") {
     currentChatId = chatId;
     newChatHandler();
   }

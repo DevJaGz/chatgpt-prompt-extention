@@ -10,8 +10,8 @@
   "content_scripts": [
     {
       "matches": ["https://chat.openai.com/*"],
-      "js": ["src/content-script.js"],
-      "css": ["src/assets/styles/content-script.css"]
+      "js": ["src/load-conversation-button.js"],
+      "css": ["src/assets/styles/main.css"]
     }
   ],
   "web_accessible_resources": [

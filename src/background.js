@@ -22,7 +22,7 @@ const getChatIdFromURL = (tabId, tab) => {
 
     // Message to send to the tab
     const message = {
-      type: "NEW_CHAT_ID",
+      type: "NEW_CHAT_DETECTED",
       chatId,
     };
 
