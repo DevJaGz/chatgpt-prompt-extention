@@ -1,7 +1,7 @@
 /// <reference path="./chrome.intellisense.js" />
 
 function notifyTabMessage(tabId, message) {
-  console.log("[BACKGROUND] message", message);
+  console.log("[BACKGROUND] notifyTabMessage", message);
   chrome.tabs.sendMessage(tabId, message);
 }
 
@@ -35,5 +35,12 @@ function listenTabChanges(tabId, tab) {
   getChatIdFromURL(tabId, tab);
 }
 
-chrome.tabs.onActivated.addListener(listenTabChanges);
+function listenNavigationCompleteChanges({ tabId, url }) {
+  if (!url || url === "about:blank") return;
+  const tab = { url };
+  listenTabChanges(tabId, tab);
+  console.log("[BACKGROUND] webNavigation", url);
+}
+
 chrome.tabs.onUpdated.addListener(listenTabChanges);
+chrome.webNavigation.onCompleted.addListener(listenNavigationCompleteChanges);

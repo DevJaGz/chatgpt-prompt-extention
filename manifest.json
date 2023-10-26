@@ -2,7 +2,7 @@
   "name": "ChatGPT Prompts",
   "version": "0.1.0",
   "description": "Save your best prompts and load them at the right moment, making your conversations smarter and more engaging.",
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage", "tabs", "webNavigation"],
   "host_permissions": ["https://chat.openai.com/*"],
   "background": {
     "service_worker": "src/background.js"
