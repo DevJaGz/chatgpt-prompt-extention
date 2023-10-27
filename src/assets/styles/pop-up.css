@@ -71,7 +71,7 @@
   background-color: var(--gptp-primary-color-900);
   border: 0;
   outline: none;
-  border-bottom: 2px solid var(0.25rem);
+  border-bottom: 2px solid var(--gptp-primary-color-500);
 }
 .input-search input:focus {
   border-bottom: 2px solid var(--gptp-green-color-500);
@@ -106,7 +106,7 @@
   padding: 0.5rem 0.75rem;
   margin: 0;
   background-color: var(--gptp-primary-color-700);
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .pop-up__footer {
