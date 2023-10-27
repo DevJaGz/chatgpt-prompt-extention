@@ -10,7 +10,12 @@
   --gptp-primary-color-700: #40414f;
   --gptp-primary-color-800: #343541;
   --gptp-primary-color-900: #202123;
+  --gptp-green-color-400: #1ed085;
   --gptp-green-color-500: #19c37d;
+  --gptp-green-color-600: #109f63;
+  --gptp-red-color-400: #c72a2a;
+  --gptp-red-color-500: #b91c1c;
+  --gptp-red-color-600: #931111;
   --gptp-from-overlay-color: var(--gptp-primary-color-900);
   --gptp-to-overlay-color: #34354123;
   --gptp-overlay-vertical-bottom-gradient: linear-gradient(
@@ -21,16 +26,45 @@
   );
 }
 
+.gptp-confirmation-btn,
+.gptp-rejection-btn,
 .gptp-default-btn {
   padding: 0.5rem 0.75rem;
-  margin: 1rem;
-  color: var(--gptp-primary-color-100);
-  background-color: var(--gptp-primary-color-800);
-  border: 1px solid var(--gptp-primary-color-550);
   border-radius: 0.25rem;
-  float: right;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
 }
 
-.gptp-default-btn:hover {
+.gptp-default-btn {
+  color: var(--gptp-primary-color-100);
+  background-color: var(--gptp-primary-color-800);
+  border-color: var(--gptp-primary-color-550);
+}
+.gptp-default-btn:not(.confirmation--hover):hover {
   background-color: var(--gptp-primary-color-700);
+}
+
+.gptp-default-btn.confirmation--hover:hover {
+  background-color: var(--gptp-green-color-500);
+  color: white;
+}
+
+.gptp-confirmation-btn {
+  color: white;
+  font-weight: 700;
+  background-color: var(--gptp-green-color-500);
+  border-color: var(--gptp-primary-color-550);
+}
+.gptp-confirmation-btn:hover {
+  background-color: var(--gptp-green-color-400);
+}
+
+.gptp-rejection-btn {
+  color: white;
+  background-color: var(--gptp-red-color-500);
+  border-color: var(--gptp-primary-color-550);
+}
+.gptp-rejection-btn:hover {
+  background-color: var(--gptp-red-color-400);
 }

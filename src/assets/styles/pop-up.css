@@ -72,6 +72,7 @@
   border: 0;
   outline: none;
   border-bottom: 2px solid var(--gptp-primary-color-500);
+  font-size: 1rem;
 }
 .input-search input:focus {
   border-bottom: 2px solid var(--gptp-green-color-500);
@@ -110,7 +111,30 @@
 }
 
 .prompts__item__content__header {
-  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: var(--gptp-primary-color-500);
+  font-weight: 500;
+}
+
+.prompts__item__content__header span {
+  font-weight: 500;
+}
+
+.prompts__item__actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.prompts__item__actions div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .pop-up__footer {
