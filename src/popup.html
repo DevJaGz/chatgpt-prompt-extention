@@ -4,10 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pop Up</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/global.css" />
     <link rel="stylesheet" type="text/css" href="assets/styles/pop-up.css" />
   </head>
-  <body>
-    <h1>This is a Pop Up</h1>
-    <button class="gptp-default-btn">HI</button>
+  <body class="pop-up">
+    <header class="pop-up__header">
+      <img
+        src="assets/imgs/extension-icon-32.png"
+        width="32"
+        height="32"
+        alt="logo"
+      />
+      <span>Chat GTP Prompts</span>
+    </header>
+    <main class="pop-up__main">
+      <section class="input-search">
+        <label for="search">Search Prompt</label>
+        <input
+          type="text"
+          name="search"
+          id="search"
+          autofocus
+          placeholder="Ex. Friend Happy birthday"
+        />
+      </section>
+    </main>
+    <footer class="pop-up__footer">FOOTER</footer>
   </body>
 </html>
