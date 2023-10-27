@@ -36,7 +36,7 @@ function tabUpdatedListener(tabId, tab) {
 }
 
 function navigationCompletedListener({ tabId, url }) {
-  if (!url || url === "about:blank") return;
+  if (!url || url === "about:blank" || !url.includes("chat.openai.com")) return;
   const tab = { url };
   getChatIdFromURL(tabId, tab);
   console.log("[BACKGROUND] webNavigation", url);
