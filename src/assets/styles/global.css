@@ -1,4 +1,4 @@
-:root{
+:root {
   --gptp-primary-color-50: #ececf1;
   --gptp-primary-color-100: #d9d9e3;
   --gptp-primary-color-200: #d1d5db;
@@ -11,6 +11,14 @@
   --gptp-primary-color-800: #343541;
   --gptp-primary-color-900: #202123;
   --gptp-green-color-500: #19c37d;
+  --from-overlay-color: var(--gptp-primary-color-900);
+  --to-overlay-color: #34354123;
+  --overlay-vertical-bottom-gradient: linear-gradient(
+    to top,
+    var(--from-overlay-color) 0%,
+    var(--to-overlay-color) 85%,
+    transparent 100%
+  );
 }
 
 .gptp-default-btn {
