@@ -123,6 +123,13 @@
   font-weight: 500;
 }
 
+.prompts__item__content__body__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .prompts__item__actions {
   margin-top: 1rem;
   display: flex;
