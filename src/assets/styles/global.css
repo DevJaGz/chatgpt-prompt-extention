@@ -45,9 +45,14 @@
   background-color: var(--gptp-primary-color-700);
 }
 
+.gptp-default-btn.confirmation--hover {
+  font-weight: 700;
+}
+
 .gptp-default-btn.confirmation--hover:hover {
   background-color: var(--gptp-green-color-500);
   color: white;
+  font-weight: 700;
 }
 
 .gptp-confirmation-btn {
